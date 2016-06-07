@@ -8,13 +8,12 @@ perl:
 before_install:
   - sudo apt-get -qq update
 install:
-  - ./autogen.sh
-  - ( cd perllib && cpanm --quiet --installdeps --notest . )
+  - cpanm --quiet --installdeps --notest .
 script:
-  - ./configure
+  - perl Makefile.PL
   - make
   - make dist
   - tar zxvf *.tar.gz
-  - cd dsp-[0-9]*
-  - ./configure
+  - cd DSC-[0-9]*
+  - perl Makefile.PL
   - make
