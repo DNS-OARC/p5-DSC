@@ -65,6 +65,8 @@ END { }
 my $dbg_lvl = 0;	# also set debug_file in dsc-grapher.cfg
 my $DATAROOT = '/usr/local/dsc/data';
 my $DEFAULTCONFIG = '/usr/local/dsc/etc/dsc-grapher.cfg';
+my $CACHEPATH = '/usr/local/dsc/cache';
+my $HTMLPATH = '/usr/local/dsc/share/html';
 my $CacheImageTTL = 60;		# 1 min
 my $expires_time = '+1m';
 my $sublist_item ='&rsaquo;&nbsp;';
@@ -84,6 +86,13 @@ sub new {
 	$self->{plotcolors} = ();
 	$self->{plotnames} = ();
 	$self->{valid_domains} = ();
+	$self->{DATAROOT} = $config{dataroot} || $DATAROOT;
+	$self->{DATAROOT} =~ s/\/+$//o;
+	$self->{CACHEPATH} = $config{cachepath} || $CACHEPATH;
+	$self->{CACHEPATH} =~ s/\/+$//o;
+	$self->{HTMLPATH} = $config{htmlpath} || $HTMLPATH;
+	$self->{HTMLPATH} =~ s/\/+$//o;
+
 	#
 	# read config file early so we can set back the clock if necessary
 	#
@@ -216,7 +225,7 @@ sub run {
 				$self->make_image($cache_name);
 			}
 		}
-		my $source = "/usr/local/dsc/share/html/plot.page";
+		my $source = $self->{HTMLPATH}.'/plot.page';
 		my $t = Text::Template->new(
 			TYPE => 'FILE',
 			SOURCE => $source,
@@ -289,7 +298,7 @@ sub datafile_path {
 	my $when = shift;
 	my $datafile = $self->{PLOT}->{datafile} || $self->{PLOT}->{dataset} || $self->{ARGS}->{plot};
 	join('/',
-		$DATAROOT,
+		$self->{DATAROOT},
 		$server,
 		$node,
 		DSC::extractor::yymmdd($when),
@@ -1041,13 +1050,13 @@ sub cache_name {
 sub cache_image_path {
 	my $self = shift;
 	my $prefix = shift || die;
-	"/usr/local/dsc/cache/$prefix.png";
+	$self->{CACHEPATH}."/$prefix.png";
 }
 
 sub cache_mapfile_path {
 	my $self = shift;
 	my $prefix = shift || confess "cache_mapfile_path: no prefix given";
-	"/usr/local/dsc/cache/$prefix.map";
+	$self->{CACHEPATH}."/$prefix.map";
 }
 
 # return 0 if we should generate a cached image
@@ -1627,11 +1636,11 @@ sub load_icon_data {
 	my $self = shift;
 	my $icon = shift;	# should be like 'foo.png"
 	my $buf;
-	if (open(F, "/usr/local/dsc/share/html/$icon")) {
+	if (open(F, $self->{HTMLPATH}.'/'.$icon)) {
 		$buf .= $_ while (<F>);
 		close(F);
 	} else {
-		warn "/usr/local/dsc/htdocs/$icon: $!\n";
+		warn $self->{HTMLPATH}."/$icon: $!\n";
 	}
 	$buf;
 }

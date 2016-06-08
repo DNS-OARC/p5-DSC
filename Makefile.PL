@@ -52,6 +52,7 @@ WriteMakefile(
         'File::Temp' => 0,
         'Hash::Merge' => 0,
         'IP::Country' => 0,
+        'IP::Authority' => 0,
         'List::Util' => 0,
         'MIME::Base64' => 0,
         'Math::Calc::Units' => 0,
@@ -59,6 +60,7 @@ WriteMakefile(
         'URI::Escape' => 0,
         'XML::Simple' => 0,
         'Net::DNS::Resolver' => 0,
+        'Switch' => 0,
     },
     (
         !eval { ExtUtils::MakeMaker->VERSION( 6.46 ) }
