@@ -25,7 +25,7 @@ Mailinglist:
 Following dependencies are needed, example for Debian/Ubuntu.
 
 ```
-sudo apt-get install libcgi-untaint-perl libfile-flock-perl libfile-nfslock-perl libhash-merge-perl libmath-calc-units-perl libtext-template-perl libxml-simple-perl libswitch-perl
+sudo apt-get install libcgi-untaint-perl libfile-flock-perl libfile-nfslock-perl libhash-merge-perl libmath-calc-units-perl libtext-template-perl libxml-simple-perl libswitch-perl libnet-dns-perl
 ```
 
 Or you can install them all using `cpanm`.
@@ -38,7 +38,7 @@ The Perl module `IP::Country` is needed also which may not exist as a package
 for some distributions, you could install it manually.
 
 ```
-cpanm --quiet --installdeps --notest IP::Country
+cpanm --quiet --notest IP::Country
 ```
 
 Now you can install.
