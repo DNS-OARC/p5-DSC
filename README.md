@@ -25,7 +25,7 @@ Mailinglist:
 Following dependencies are needed, example for Debian/Ubuntu.
 
 ```
-sudo apt-get install libcgi-untaint-perl libfile-flock-perl libfile-nfslock-perl libhash-merge-perl libmath-calc-units-perl libtext-template-perl libxml-simple-perl
+sudo apt-get install libcgi-untaint-perl libfile-flock-perl libfile-nfslock-perl libhash-merge-perl libmath-calc-units-perl libtext-template-perl libxml-simple-perl libswitch-perl
 ```
 
 Or you can install them all using `cpanm`.
@@ -46,5 +46,6 @@ Now you can install.
 ```
 perl Makefile.PL
 make
+make test
 make install
 ```

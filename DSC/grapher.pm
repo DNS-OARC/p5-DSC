@@ -1622,7 +1622,7 @@ sub seconds_to_units {
 	my $s = shift;
 	my $a;
 	my $v;
-	foreach my $u qw(years weeks days hours minutes) {
+	foreach my $u ( qw(years weeks days hours minutes) ) {
 		$a = Math::Calc::Units::convert("$s seconds", $u);
 		$a =~ /^([-\.\de]+)/ or die "bad units $a";
 		$v = $1;
