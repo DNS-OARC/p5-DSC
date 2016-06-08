@@ -41,9 +41,9 @@ WriteMakefile(
     NAME          => 'DSC',
     AUTHOR        => q{Jerry Lundström <lundstrom.jerry@gmail.com>},
     VERSION_FROM  => 'DSC/grapher.pm',
-    ABSTRACT_FROM => 'DSC/grapher.pm',
     LIBS          => [],
     PREREQ_PM     => {
+        'Test::More' => 0,
         'CGI' => 0,
         'CGI::Untaint' => 0,
         'Digest::MD5' => 0,

@@ -1,12 +1,18 @@
-DSC/extractor.pm
 DSC/extractor/config.pm
-DSC/grapher.pm
+DSC/extractor.pm
 DSC/grapher/config.pm
-DSC/grapher/text.pm
+DSC/grapher/plot.pm
+DSC/grapher.pm
 DSC/grapher/template.pm
+DSC/grapher/text.pm
 DSC/ploticus.pm
 DSC/putfile.pm
+
+t/00-load.t
+t/manifest.t
+
 Makefile.PL
 MANIFEST			This list of files
+MANIFEST.SKIP
 LICENSE
 README.md

@@ -74,7 +74,6 @@ my $timestamp;
 my $SERVER;
 my $NODE;
 my %MD5;
-my $debug;
 
 sub run {
 	$filename = '-';

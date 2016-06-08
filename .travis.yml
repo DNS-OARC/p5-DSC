@@ -17,3 +17,4 @@ script:
   - cd DSC-[0-9]*
   - perl Makefile.PL
   - make
+  - make test
