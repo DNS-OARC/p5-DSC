@@ -14,7 +14,7 @@ script:
   - make
   - make dist
   - tar zxvf *.tar.gz
-  - cd DSC-[0-9]*
+  - cd p5-DSC-[0-9]*
   - perl Makefile.PL
   - make
   - make test

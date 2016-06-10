@@ -39,6 +39,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME          => 'DSC',
+    DISTNAME      => 'p5-DSC',
     AUTHOR        => q{Jerry Lundström <lundstrom.jerry@gmail.com>},
     VERSION_FROM  => 'DSC/grapher.pm',
     LIBS          => [],
