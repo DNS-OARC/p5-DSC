@@ -32,30 +32,49 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
+use 5.006;
+use strict;
+use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    'NAME'	=> 'DSC',
-    'VERSION_FROM' => 'DSC/ploticus.pm',
-
-    'LIBS'	=> [],
-    'DEFINE'	=> '',
-    'INC'	=> '',
-    'PREREQ_PM'	=> {
-		CGI => 0,
-		CGI::Untaint => 0,
-		Digest::MD5 => 0,
-		File::Flock => 0,
-		File::NFSLock => 0,
-		File::Temp => 0,
-		Hash::Merge => 0,
-		IP::Country => 0,
-		List::Util => 0,
-		MIME::Base64 => 0,
-		Math::Calc::Units => 0,
-		Text::Template => 0,
-		URI::Escape => 0,
-		XML::Simple => 0,
-		Net::DNS::Resolver => 0,
+    NAME          => 'DSC',
+    AUTHOR        => q{Jerry Lundström <lundstrom.jerry@gmail.com>},
+    VERSION_FROM  => 'DSC/grapher.pm',
+    LIBS          => [],
+    PREREQ_PM     => {
+        'Test::More' => 0,
+        'CGI' => 0,
+        'CGI::Untaint' => 0,
+        'Digest::MD5' => 0,
+        'File::Flock' => 0,
+        'File::NFSLock' => 0,
+        'File::Temp' => 0,
+        'Hash::Merge' => 0,
+        'IP::Country' => 0,
+        'IP::Authority' => 0,
+        'List::Util' => 0,
+        'MIME::Base64' => 0,
+        'Math::Calc::Units' => 0,
+        'Text::Template' => 0,
+        'URI::Escape' => 0,
+        'XML::Simple' => 0,
+        'Net::DNS::Resolver' => 0,
+        'Switch' => 0,
     },
+    (
+        !eval { ExtUtils::MakeMaker->VERSION( 6.46 ) }
+        ? ()
+        : (
+            META_ADD => {
+                resources => {
+                    homepage   => 'https://github.com/DNS-OARC/p5-DSC',
+                    repository => 'https://github.com/DNS-OARC/p5-DSC',
+                    bugtracker => 'https://github.com/DNS-OARC/p5-DSC/issues',
+                },
+            }
+        )
+    ),
+    dist => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+    clean => { FILES => 'DSC-*' },
 );

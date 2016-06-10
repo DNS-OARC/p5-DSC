@@ -1,0 +1,17 @@
+Revision history for p5-DSC
+
+2.00    2016-06-10
+        Release 2.00
+
+        Separate the Perl library into it's own repository and try to make
+        all paths configurable.
+
+        4285862 Update install instructions
+        05ddf51 Disable tainted due to errors in older Perl
+                https://travis-ci.org/DNS-OARC/p5-DSC/builds/136101983
+        c478a19 Add tests
+        3360fbb Add a few missing Perl deps
+        3e3fb55 Fix #2: Make paths configurable, defaults left not FHS compliant
+        95b7881 Remove mysql, not in use
+        e734bcc Make travis-ci work
+        ae47ee6 Restructure to only have Perl library

@@ -62,8 +62,9 @@ use vars      @EXPORT_OK;
 
 END { }
 
-my $putlog;
-my $TOPDIR;
+our $debug = 0;
+our $putlog = "/usr/local/dsc/var/log/put-file.log";
+our $TOPDIR = "/usr/local/dsc/data";
 
 my $filename;
 my $clength;
@@ -73,13 +74,8 @@ my $timestamp;
 my $SERVER;
 my $NODE;
 my %MD5;
-my $debug;
 
 sub run {
-	$debug = 0;
-	$putlog = "/usr/local/dsc/var/log/put-file.log";
-	$TOPDIR = "/usr/local/dsc/data";
-
 	$filename = '-';
 	$clength = $ENV{CONTENT_LENGTH};
 	$method = $ENV{REQUEST_METHOD} || '-';
