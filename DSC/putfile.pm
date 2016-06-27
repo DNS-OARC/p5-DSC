@@ -49,7 +49,7 @@ use Digest::MD5;
 BEGIN {
         use Exporter   ();
         use vars       qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-        $VERSION     = 1.00;
+        $VERSION     = '2.00';
         @ISA         = qw(Exporter);
         @EXPORT      = qw(
 		&run
