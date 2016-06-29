@@ -42,26 +42,75 @@ WriteMakefile(
     DISTNAME      => 'p5-DSC',
     AUTHOR        => q{Jerry Lundström <lundstrom.jerry@gmail.com>},
     VERSION_FROM  => 'DSC/grapher.pm',
-    LIBS          => [],
-    PREREQ_PM     => {
-        'Test::More' => 0,
-        'CGI' => 0,
-        'CGI::Untaint' => 0,
-        'Digest::MD5' => 0,
-        'File::NFSLock' => 0,
-        'File::Temp' => 0,
-        'Hash::Merge' => 0,
-        'IP::Country' => 0,
-        'IP::Authority' => 0,
-        'List::Util' => 0,
-        'MIME::Base64' => 0,
-        'Math::Calc::Units' => 0,
-        'Text::Template' => 0,
-        'URI::Escape' => 0,
-        'XML::Simple' => 0,
-        'Net::DNS::Resolver' => 0,
-        'Switch' => 0,
-    },
+    ABSTRACT      => 'DNS Statistics Presenter Perl Library',
+    (
+        !eval { ExtUtils::MakeMaker->VERSION( 6.3002 ) }
+        ? ()
+        : ( LICENSE => 'bsd' )
+    ),
+    (
+        eval { ExtUtils::MakeMaker->VERSION( 6.5503 ) }
+        ? (
+            BUILD_REQUIRES => {
+                'Test::More' => 0,
+                'CGI' => 0,
+                'CGI::Untaint' => 0,
+                'Digest::MD5' => 0,
+                'File::NFSLock' => 0,
+                'File::Temp' => 0,
+                'Hash::Merge' => 0,
+                'IP::Country' => 0,
+                'IP::Authority' => 0,
+                'List::Util' => 0,
+                'MIME::Base64' => 0,
+                'Math::Calc::Units' => 0,
+                'Text::Template' => 0,
+                'URI::Escape' => 0,
+                'XML::Simple' => 0,
+                'Net::DNS::Resolver' => 0,
+                'Switch' => 0,
+            },
+            PREREQ_PM => {
+                'CGI' => 0,
+                'CGI::Untaint' => 0,
+                'Digest::MD5' => 0,
+                'File::NFSLock' => 0,
+                'File::Temp' => 0,
+                'Hash::Merge' => 0,
+                'IP::Country' => 0,
+                'IP::Authority' => 0,
+                'List::Util' => 0,
+                'MIME::Base64' => 0,
+                'Math::Calc::Units' => 0,
+                'Text::Template' => 0,
+                'URI::Escape' => 0,
+                'XML::Simple' => 0,
+                'Net::DNS::Resolver' => 0,
+                'Switch' => 0,
+            }
+          )
+        : (
+            PREREQ_PM => {
+                'Test::More' => 0,
+                'CGI' => 0,
+                'CGI::Untaint' => 0,
+                'Digest::MD5' => 0,
+                'File::NFSLock' => 0,
+                'File::Temp' => 0,
+                'Hash::Merge' => 0,
+                'IP::Country' => 0,
+                'IP::Authority' => 0,
+                'List::Util' => 0,
+                'MIME::Base64' => 0,
+                'Math::Calc::Units' => 0,
+                'Text::Template' => 0,
+                'URI::Escape' => 0,
+                'XML::Simple' => 0,
+                'Net::DNS::Resolver' => 0,
+                'Switch' => 0,
+            }
+        )
+    ),
     (
         !eval { ExtUtils::MakeMaker->VERSION( 6.46 ) }
         ? ()
@@ -76,5 +125,5 @@ WriteMakefile(
         )
     ),
     dist => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean => { FILES => 'DSC-*' },
+    clean => { FILES => 'p5-DSC-*' },
 );
