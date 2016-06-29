@@ -36,7 +36,6 @@ package DSC::extractor;
 
 use POSIX;
 use Digest::MD5;
-#use File::Flock;
 use File::NFSLock;
 
 use strict;
@@ -76,7 +75,6 @@ sub lockfile_format {
 
 sub lock_file {
 	my $fn = shift;
-#	return new File::Flock($fn);
 	return File::NFSLock->new($fn, 'BLOCKING');
 }
 
