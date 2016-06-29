@@ -1,5 +1,16 @@
 Revision history for p5-DSC
 
+2.02    2016-06-29
+
+        Release 2.02
+
+        Minor fixes to EUMM Makefile.
+
+        Commits:
+
+        0909108 Set ABSTRACT/LICENSE, use correct `clean` and BUILD_REQUIRES
+                if supported.
+
 2.01    2016-06-29
 
         Release 2.01
