@@ -2,7 +2,7 @@ Source: libdsc-perl
 Section: perl
 Priority: optional
 Maintainer: Jerry Lundström <lundstrom.jerry@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), libcgi-untaint-perl, libfile-flock-perl,
+Build-Depends: debhelper (>= 8.0.0), libcgi-untaint-perl,
  libfile-nfslock-perl, libhash-merge-perl, libmath-calc-units-perl,
  libtext-template-perl, libxml-simple-perl, libswitch-perl, libnet-dns-perl,
  libip-country-perl, libcgi-pm-perl, liburi-perl
@@ -14,7 +14,7 @@ Vcs-Browser: https://github.com/DNS-OARC/p5-DSC
 Package: libdsc-perl
 Architecture: all
 Depends: ${perl:Depends}, ${misc:Depends}, libcgi-untaint-perl,
- libfile-flock-perl, libfile-nfslock-perl, libhash-merge-perl,
+ libfile-nfslock-perl, libhash-merge-perl,
  libmath-calc-units-perl, libtext-template-perl, libxml-simple-perl,
  libswitch-perl, libnet-dns-perl, libip-country-perl, libcgi-pm-perl,
  liburi-perl

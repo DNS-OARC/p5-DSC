@@ -48,7 +48,6 @@ WriteMakefile(
         'CGI' => 0,
         'CGI::Untaint' => 0,
         'Digest::MD5' => 0,
-        'File::Flock' => 0,
         'File::NFSLock' => 0,
         'File::Temp' => 0,
         'Hash::Merge' => 0,
