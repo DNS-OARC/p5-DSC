@@ -1,3 +1,16 @@
+libdsc-perl (2.02-1~unstable+1) unstable; urgency=low
+
+  * Release 2.02
+
+    Minor fixes to EUMM Makefile.
+
+    Commits:
+
+    0909108 Set ABSTRACT/LICENSE, use correct `clean` and BUILD_REQUIRES
+            if supported.
+
+ -- Jerry Lundström <lundstrom.jerry@gmail.com>  Wed, 29 Jun 2016 14:35:09 +0200
+
 libdsc-perl (2.01-2~unstable+1) unstable; urgency=low
 
   * Release 2.01
