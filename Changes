@@ -1,6 +1,19 @@
 Revision history for p5-DSC
 
+2.01    2016-06-29
+
+        Release 2.01
+
+        All `$VERSION` are now synced and no dependency on File::Flock which
+        did not exist on all distributions.
+
+        Commits:
+
+        cbf385e Remove use of File::Flock, use File::NFSLock instead.
+        5fd5342 Add debian/ubuntu package files and corrected VERSION in .pm's
+
 2.00    2016-06-10
+
         Release 2.00
 
         Separate the Perl library into it's own repository and try to make

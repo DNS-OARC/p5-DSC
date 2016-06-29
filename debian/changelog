@@ -1,0 +1,19 @@
+libdsc-perl (2.01-2~unstable+1) unstable; urgency=low
+
+  * Release 2.01
+
+    All `$VERSION` are now synced and no dependency on File::Flock which
+    did not exist on all distributions.
+
+    Commits:
+
+    cbf385e Remove use of File::Flock, use File::NFSLock instead.
+    5fd5342 Add debian/ubuntu package files and corrected VERSION in .pm's
+
+ -- Jerry Lundström <lundstrom.jerry@gmail.com>  Wed, 29 Jun 2016 09:10:26 +0200
+
+libdsc-perl (2.00-5~unstable+1) unstable; urgency=low
+
+  * Release 2.00
+
+ -- Jerry Lundström <lundstrom.jerry@gmail.com>  Mon, 27 Jun 2016 11:26:01 +0200

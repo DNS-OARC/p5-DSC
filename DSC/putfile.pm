@@ -41,7 +41,7 @@ use strict;
 use warnings;
 
 use POSIX;
-use File::Flock;
+use File::NFSLock;
 use File::Temp qw();
 use Digest::MD5;
 
@@ -49,7 +49,7 @@ use Digest::MD5;
 BEGIN {
         use Exporter   ();
         use vars       qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-        $VERSION     = 1.00;
+        $VERSION     = '2.01';
         @ISA         = qw(Exporter);
         @EXPORT      = qw(
 		&run
@@ -74,6 +74,11 @@ my $timestamp;
 my $SERVER;
 my $NODE;
 my %MD5;
+
+sub lock_file {
+	my $fn = shift;
+	return File::NFSLock->new($fn, 'BLOCKING');
+}
 
 sub run {
 	$filename = '-';
@@ -190,7 +195,7 @@ sub reply {
 
 sub log {
 	my $msg = shift;
-	my $lock = new File::Flock($putlog);
+	my $lock = lock_file($putlog);
 	if (open (LOG, ">> $putlog")) {
 		print LOG "$msg\n";
 		close(LOG);
