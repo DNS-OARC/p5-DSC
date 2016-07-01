@@ -5,8 +5,6 @@ perl:
   - "5.18"
   - "5.16"
   - "5.14"
-before_install:
-  - sudo apt-get -qq update
 install:
   - cpanm --quiet --installdeps --notest .
 script:
@@ -14,7 +12,7 @@ script:
   - make
   - make dist
   - tar zxvf *.tar.gz
-  - cd p5-DSC-[0-9]*
+  - cd p5-DSC-*[0-9]
   - perl Makefile.PL
   - make
   - make test
