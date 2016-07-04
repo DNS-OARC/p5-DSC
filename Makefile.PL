@@ -37,6 +37,10 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
+unless ( scalar grep {-f $_} qw(/usr/local/bin/ploticus /usr/local/bin/pl /usr/bin/ploticus /usr/bin/pl) ) {
+    warn 'Missing ploticus/pl, will not be able to generate graphs';
+}
+
 WriteMakefile(
     NAME          => 'DSC',
     DISTNAME      => 'p5-DSC',

@@ -43,6 +43,13 @@ for some distributions, you could install it manually.
 cpanm --quiet --notest IP::Country
 ```
 
+Ploticus is used to create the graphs, install it via the distributions
+packages or manually. Example for Debian/Ubuntu.
+
+```
+sudo apt-get install ploticus
+```
+
 Now you can install.
 
 ```
