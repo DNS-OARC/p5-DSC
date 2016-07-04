@@ -43,7 +43,7 @@ use strict;
 BEGIN {
         use Exporter   ();
         use vars       qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-        $VERSION     = '2.02';
+        $VERSION     = '2.03';
         @ISA         = qw(Exporter);
         @EXPORT      = qw(
 		&ploticus_init
@@ -451,6 +451,7 @@ sub ploticus_arg {
 sub ploticus_begin {
 	die "wrong state" unless (1 == $ploticus_state);
 	my $prog = (grep {-f $_} qw(/usr/local/bin/ploticus /usr/local/bin/pl /usr/bin/ploticus /usr/bin/pl))[0];
+	die 'no ploticus program' unless $prog;
 	my $cmd = join(" ",
 		$prog,
 		"-stdin",

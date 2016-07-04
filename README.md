@@ -1,5 +1,7 @@
 # DNS Statistics Presenter Perl Library
 
+[![Build Status](https://travis-ci.org/DNS-OARC/p5-DSC.svg?branch=develop)](https://travis-ci.org/DNS-OARC/p5-DSC)
+
 DNS Statistics Presenter (DSP) is a tool used for exploring statistics from
 busy DNS servers collected by DNS Statistics Collector (DSC).  This is the
 Perl library that is used to extract and graph DSC data.
@@ -39,6 +41,13 @@ for some distributions, you could install it manually.
 
 ```
 cpanm --quiet --notest IP::Country
+```
+
+Ploticus is used to create the graphs, install it via the distributions
+packages or manually. Example for Debian/Ubuntu.
+
+```
+sudo apt-get install ploticus
 ```
 
 Now you can install.
