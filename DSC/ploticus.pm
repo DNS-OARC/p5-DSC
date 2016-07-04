@@ -451,6 +451,7 @@ sub ploticus_arg {
 sub ploticus_begin {
 	die "wrong state" unless (1 == $ploticus_state);
 	my $prog = (grep {-f $_} qw(/usr/local/bin/ploticus /usr/local/bin/pl /usr/bin/ploticus /usr/bin/pl))[0];
+	die 'no ploticus program' unless $prog;
 	my $cmd = join(" ",
 		$prog,
 		"-stdin",

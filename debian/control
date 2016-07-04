@@ -17,7 +17,7 @@ Depends: ${perl:Depends}, ${misc:Depends}, libcgi-untaint-perl,
  libfile-nfslock-perl, libhash-merge-perl,
  libmath-calc-units-perl, libtext-template-perl, libxml-simple-perl,
  libswitch-perl, libnet-dns-perl, libip-country-perl, libcgi-pm-perl,
- liburi-perl
+ liburi-perl, ploticus
 Description: DNS Statistics Presenter Perl Library
  DNS Statistics Presenter (DSP) is a tool used for exploring statistics from
  busy DNS servers collected by DNS Statistics Collector (DSC).  This is the
