@@ -1,3 +1,17 @@
+libdsc-perl (2.03-1~unstable+1) unstable; urgency=low
+
+  * Release 2.03
+
+    Dependency on Ploticus was missing so generating graphs would fail.
+
+    Commits:
+
+    34d67a1 Ploticus
+    73889c8 Add Travis-CI build status
+    761e2b4 Fix travis script, only expand dir and remove unneeded.
+
+ -- Jerry Lundström <lundstrom.jerry@gmail.com>  Mon, 04 Jul 2016 14:21:02 +0200
+
 libdsc-perl (2.02-1~unstable+1) unstable; urgency=low
 
   * Release 2.02

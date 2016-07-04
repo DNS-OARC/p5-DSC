@@ -1,5 +1,17 @@
 Revision history for p5-DSC
 
+2.03    2016-07-04
+
+        Release 2.03
+
+        Dependency on Ploticus was missing so generating graphs would fail.
+
+        Commits:
+
+        34d67a1 Ploticus
+        73889c8 Add Travis-CI build status
+        761e2b4 Fix travis script, only expand dir and remove unneeded.
+
 2.02    2016-06-29
 
         Release 2.02

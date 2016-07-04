@@ -55,7 +55,7 @@ use Switch;
 use strict;
 use warnings;
 
-our $VERSION = '2.02';
+our $VERSION = '2.03';
 
 BEGIN { }
 
