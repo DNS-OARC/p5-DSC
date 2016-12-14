@@ -1,0 +1,85 @@
+Name:           perl-DSC
+Version:        2.03
+Release:        1%{?dist}
+Summary:        DNS Statistics Presenter Perl Library
+
+License:        BSD-3-Clause
+URL:            https://www.dns-oarc.net/oarc/data/dsc
+# Using same naming as to build debs, get the source (and rename it) at
+# https://www.dns-oarc.net/dsc/download and change %setup
+Source0:        %{name}_%{version}.orig.tar.gz
+
+BuildArch:      noarch
+
+BuildRequires:  perl
+BuildRequires:  perl-macros
+BuildRequires:  perl(Test::More)
+BuildRequires:  perl(CGI)
+BuildRequires:  perl(CGI::Untaint)
+BuildRequires:  perl(Digest::MD5)
+BuildRequires:  perl(File::NFSLock)
+BuildRequires:  perl(File::Temp)
+BuildRequires:  perl(Hash::Merge)
+BuildRequires:  perl(IP::Country)
+BuildRequires:  perl(IP::Authority)
+BuildRequires:  perl(List::Util)
+BuildRequires:  perl(MIME::Base64)
+BuildRequires:  perl(Math::Calc::Units)
+BuildRequires:  perl(Text::Template)
+BuildRequires:  perl(URI::Escape)
+BuildRequires:  perl(XML::Simple)
+BuildRequires:  perl(Net::DNS::Resolver)
+BuildRequires:  perl(Switch)
+%{perl_requires}
+Requires:       perl(CGI)
+Requires:       perl(CGI::Untaint)
+Requires:       perl(Digest::MD5)
+Requires:       perl(File::NFSLock)
+Requires:       perl(File::Temp)
+Requires:       perl(Hash::Merge)
+Requires:       perl(IP::Country)
+Requires:       perl(IP::Authority)
+Requires:       perl(List::Util)
+Requires:       perl(MIME::Base64)
+Requires:       perl(Math::Calc::Units)
+Requires:       perl(Text::Template)
+Requires:       perl(URI::Escape)
+Requires:       perl(XML::Simple)
+Requires:       perl(Net::DNS::Resolver)
+Requires:       perl(Switch)
+
+
+%description
+DNS Statistics Presenter (DSP) is a tool used for exploring statistics from
+busy DNS servers collected by DNS Statistics Collector (DSC).  This is the
+Perl library that is used to extract and graph DSC data.
+
+
+%prep
+%setup -q -n %{name}_%{version}
+
+
+%build
+%{__perl} Makefile.PL
+make %{?_smp_mflags}
+
+
+%install
+%perl_make_install
+find %buildroot/%_prefix -name *.bs -a -size 0 | xargs rm -f
+%perl_process_packlist
+%perl_gen_filelist
+
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+
+%files -f %{name}.files
+%defattr(-,root,root)
+%doc Changes LICENSE README.md
+
+
+%changelog
+* Wed Dec 14 2016 Jerry Lundström <lundstrom.jerry@gmail.com> 2.03-1
+- Initial package
