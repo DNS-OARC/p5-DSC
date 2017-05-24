@@ -5,7 +5,7 @@ Maintainer: Jerry Lundström <lundstrom.jerry@gmail.com>
 Build-Depends: debhelper (>= 8.0.0), libcgi-untaint-perl,
  libfile-nfslock-perl, libhash-merge-perl, libmath-calc-units-perl,
  libtext-template-perl, libxml-simple-perl, libswitch-perl, libnet-dns-perl,
- libip-country-perl, libcgi-pm-perl, liburi-perl
+ libip-country-perl, libcgi-pm-perl, liburi-perl, libhtml-parser-perl
 Standards-Version: 3.9.4
 Homepage: https://www.dns-oarc.net/oarc/data/dsc
 Vcs-Git: https://github.com/DNS-OARC/p5-DSC.git
@@ -17,7 +17,7 @@ Depends: ${perl:Depends}, ${misc:Depends}, libcgi-untaint-perl,
  libfile-nfslock-perl, libhash-merge-perl,
  libmath-calc-units-perl, libtext-template-perl, libxml-simple-perl,
  libswitch-perl, libnet-dns-perl, libip-country-perl, libcgi-pm-perl,
- liburi-perl, ploticus
+ liburi-perl, ploticus, libhtml-parser-perl
 Description: DNS Statistics Presenter Perl Library
  DNS Statistics Presenter (DSP) is a tool used for exploring statistics from
  busy DNS servers collected by DNS Statistics Collector (DSC).  This is the
