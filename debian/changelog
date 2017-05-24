@@ -1,3 +1,18 @@
+libdsc-perl (2.04-1~unstable+1) unstable; urgency=low
+
+  * Release 2.04
+
+    Fix XSS in error handling.
+
+    Commits:
+
+    736e29f Fix #28: HTML encode output
+    1d6243b Remove execute flag on .pm's and provide DSC
+    f812504 Test using Perl 5.24 on Travis
+    b758f70 Add RPM spec
+
+ -- Jerry Lundström <lundstrom.jerry@gmail.com>  Wed, 24 May 2017 09:30:41 +0200
+
 libdsc-perl (2.03-1~unstable+1) unstable; urgency=low
 
   * Release 2.03
