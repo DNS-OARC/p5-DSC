@@ -30,6 +30,7 @@ BuildRequires:  perl(URI::Escape)
 BuildRequires:  perl(XML::Simple)
 BuildRequires:  perl(Net::DNS::Resolver)
 BuildRequires:  perl(Switch)
+BuildRequires:  perl(HTML::Entities)
 %{perl_requires}
 Requires:       perl(CGI)
 Requires:       perl(CGI::Untaint)
@@ -47,6 +48,7 @@ Requires:       perl(URI::Escape)
 Requires:       perl(XML::Simple)
 Requires:       perl(Net::DNS::Resolver)
 Requires:       perl(Switch)
+Requires:       perl(HTML::Entities)
 
 Provides:       perl(DSC)
 
