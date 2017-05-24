@@ -1,4 +1,4 @@
-# Copyright (c) 2016, OARC, Inc.
+# Copyright (c) 2016-2017, OARC, Inc.
 # Copyright (c) 2007, The Measurement Factory, Inc.
 # Copyright (c) 2007, Internet Systems Consortium, Inc.
 # All rights reserved.
@@ -37,7 +37,7 @@ package DSC::grapher::text;
 BEGIN {
         use Exporter   ();
         use vars       qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-        $VERSION     = '2.03';
+        $VERSION     = '2.04';
         @ISA         = qw(Exporter);
         @EXPORT      = qw(
                 %TEXTS
