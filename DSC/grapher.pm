@@ -1,4 +1,4 @@
-# Copyright (c) 2016, OARC, Inc.
+# Copyright (c) 2016-2017, OARC, Inc.
 # Copyright (c) 2007, The Measurement Factory, Inc.
 # Copyright (c) 2007, Internet Systems Consortium, Inc.
 # All rights reserved.
@@ -51,11 +51,12 @@ use Text::Template;
 use Hash::Merge;
 use Math::Calc::Units;
 use Switch;
+use HTML::Entities;
 
 use strict;
 use warnings;
 
-our $VERSION = '2.03';
+our $VERSION = '2.04';
 
 BEGIN { }
 
@@ -980,7 +981,7 @@ sub error {
 	my $msg = shift;
 	if ($self->cgi) {
 		print $self->cgi->header(-type=>'text/html',-expires=>$expires_time);
-		print "<h2>$0 ERROR</h2><p>$msg\n";
+		print('<h2>', encode_entities($0), ' ERROR</h2><p>', encode_entities($msg), '</p>');
 	} else {
 		print STDERR "ERROR: $msg\n";
 	}
@@ -1324,6 +1325,7 @@ use URI::Escape;
 use MIME::Base64;
 use Carp;
 use Data::Dumper;
+use HTML::Entities;
 
 my %IconData;
 
@@ -1336,7 +1338,7 @@ sub img_with_map {
 	my %attrs;
 
 	if (my $reason = $self->reason_to_not_plot) {
-		return "<div class=\"notice\">$reason</div>";
+		return "<div class=\"notice\">".encode_entities($reason)."</div>";
 	}
 
 	unless ($self->cached_image_size($cache_name) > 0) {
