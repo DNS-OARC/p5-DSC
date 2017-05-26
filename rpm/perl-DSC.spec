@@ -2,6 +2,7 @@ Name:           perl-DSC
 Version:        2.04
 Release:        1%{?dist}
 Summary:        DNS Statistics Presenter Perl Library
+Group:          Development/Libraries/Perl
 
 License:        BSD-3-Clause
 URL:            https://www.dns-oarc.net/oarc/data/dsc
