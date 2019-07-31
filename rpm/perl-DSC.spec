@@ -59,6 +59,7 @@ Requires:       perl(XML::Simple)
 Requires:       perl(Net::DNS::Resolver)
 Requires:       perl(Switch)
 Requires:       perl(HTML::Entities)
+Requires:       ploticus
 
 %description
 DNS Statistics Presenter (DSP) is a tool used for exploring statistics from
