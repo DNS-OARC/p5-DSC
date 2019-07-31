@@ -42,6 +42,24 @@ BuildRequires:  perl(HTML::Entities)
 
 Provides:       perl(DSC)
 
+Requires:       perl(CGI)
+Requires:       perl(CGI::Untaint)
+Requires:       perl(Digest::MD5)
+Requires:       perl(File::NFSLock)
+Requires:       perl(File::Temp)
+Requires:       perl(Hash::Merge)
+Requires:       perl(IP::Country)
+Requires:       perl(IP::Authority)
+Requires:       perl(List::Util)
+Requires:       perl(MIME::Base64)
+Requires:       perl(Math::Calc::Units)
+Requires:       perl(Text::Template)
+Requires:       perl(URI::Escape)
+Requires:       perl(XML::Simple)
+Requires:       perl(Net::DNS::Resolver)
+Requires:       perl(Switch)
+Requires:       perl(HTML::Entities)
+
 %description
 DNS Statistics Presenter (DSP) is a tool used for exploring statistics from
 busy DNS servers collected by DNS Statistics Collector (DSC).  This is the
