@@ -13,7 +13,14 @@ Source0:        %{name}_%{version}.orig.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  perl
+%if 0%{?suse_version} || 0%{?sle_version}
 BuildRequires:  perl-macros
+%else
+BuildRequires:  perl-macros
+BuildRequires:  perl-generators
+BuildRequires:  perl-interpreter
+BuildRequires:  perl(ExtUtils::MakeMaker)
+%endif
 BuildRequires:  perl(Test::More)
 BuildRequires:  perl(CGI)
 BuildRequires:  perl(CGI::Untaint)
@@ -32,24 +39,6 @@ BuildRequires:  perl(XML::Simple)
 BuildRequires:  perl(Net::DNS::Resolver)
 BuildRequires:  perl(Switch)
 BuildRequires:  perl(HTML::Entities)
-%{perl_requires}
-Requires:       perl(CGI)
-Requires:       perl(CGI::Untaint)
-Requires:       perl(Digest::MD5)
-Requires:       perl(File::NFSLock)
-Requires:       perl(File::Temp)
-Requires:       perl(Hash::Merge)
-Requires:       perl(IP::Country)
-Requires:       perl(IP::Authority)
-Requires:       perl(List::Util)
-Requires:       perl(MIME::Base64)
-Requires:       perl(Math::Calc::Units)
-Requires:       perl(Text::Template)
-Requires:       perl(URI::Escape)
-Requires:       perl(XML::Simple)
-Requires:       perl(Net::DNS::Resolver)
-Requires:       perl(Switch)
-Requires:       perl(HTML::Entities)
 
 Provides:       perl(DSC)
 
@@ -64,24 +53,41 @@ Perl library that is used to extract and graph DSC data.
 
 
 %build
+%if 0%{?suse_version} || 0%{?sle_version}
 %{__perl} Makefile.PL
+%else
+%{__perl} Makefile.PL INSTALLDIRS=vendor
+%endif
 make %{?_smp_mflags}
 
 
 %install
+%if 0%{?suse_version} || 0%{?sle_version}
 %perl_make_install
 find %buildroot/%_prefix -name *.bs -a -size 0 | xargs rm -f
 %perl_process_packlist
 %perl_gen_filelist
+%else
+%{__make} pure_install DESTDIR=%{buildroot}
+find %{buildroot} -type f -name .packlist -delete
+%{_fixperms} -c %{buildroot}
+%endif
 
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 
+%if 0%{?suse_version} || 0%{?sle_version}
 %files -f %{name}.files
 %defattr(-,root,root)
 %doc Changes LICENSE README.md
+%else
+%files
+%license LICENSE
+%doc Changes README.md
+%{perl_vendorlib}/DSC/
+%endif
 
 
 %changelog
