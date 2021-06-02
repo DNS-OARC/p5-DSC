@@ -1,4 +1,3 @@
 .git
 debian
-.travis.yml
 Makefile.old
