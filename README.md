@@ -1,6 +1,6 @@
-# DNS Statistics Presenter Perl Library
+## DISCONTINUED: This project has been discontinued and will not receive any future updates or bug fixes.
 
-[![Build Status](https://travis-ci.org/DNS-OARC/p5-DSC.svg?branch=develop)](https://travis-ci.org/DNS-OARC/p5-DSC)
+# DNS Statistics Presenter Perl Library
 
 DNS Statistics Presenter (DSP) is a tool used for exploring statistics from
 busy DNS servers collected by DNS Statistics Collector (DSC).  This is the
